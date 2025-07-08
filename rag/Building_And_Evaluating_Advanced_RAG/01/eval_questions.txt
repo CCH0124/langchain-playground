@@ -1,0 +1,6 @@
+What is Deployment ?
+What is StatefulSet ?
+What is the difference between statefulset and deployment?
+What is a worker machine in Kubernetes ?
+How to install Kubernetes and setting cluster ?
+How to Scheduler Pod ?

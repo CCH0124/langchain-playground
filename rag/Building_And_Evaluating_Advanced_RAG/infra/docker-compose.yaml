@@ -1,0 +1,11 @@
+services:
+  llm_database_vector:
+    image: pgvector/pgvector:pg17
+    container_name: pg_vector
+    ports:
+      - 5433:5432
+    environment:
+      - POSTGRES_PASSWORD=postgres
+    volumes:
+      - ./init.sh:/docker-entrypoint-initdb.d/init-db.sh
+    shm_size: '2gb'
