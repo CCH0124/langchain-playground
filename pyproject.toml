@@ -4,18 +4,23 @@ version = "0.1.0"
 description = ""
 authors = ["CCH0124 <cchong0124@gmail.com>"]
 readme = "README.md"
+packages = [
+  { include = "langchain_tutorial" },
+  { include = "langgraph_tutorial" },
+  { include = "rag_tutorial" }
+]
 
 [tool.poetry.dependencies]
 python = "^3.10"
 langchain-ollama = "^0.3.3"
 python-dotenv = "^1.1.1"
-langchain = "^0.3.26"
+langchain = "^0.3.27"
 langchain-core = "^0.3.68"
 transformers = "^4.53.1"
 langchain-community = "^0.3.27"
 pymupdf = "^1.26.3"
 docarray = "^0.41.0"
-langgraph = "^0.5.1"
+langgraph = "^0.6.5"
 llama-index = "^0.12.47"
 llama-index-llms-ollama = "^0.6.2"
 llama-index-embeddings-ollama = "^0.6.0"
@@ -23,6 +28,7 @@ llama-index-vector-stores-postgres = "^0.5.4"
 trulens-providers-litellm = "^1.5.3"
 litellm = "^1.74.0"
 trulens-apps-llamaindex = "^1.5.3"
+langmem = "^0.0.29"
 
 
 [tool.poetry.group.dev.dependencies]
