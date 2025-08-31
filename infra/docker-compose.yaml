@@ -1,0 +1,37 @@
+services:
+  ollama:
+    image: ollama/ollama:latest
+    container_name: ollama
+    hostname: ollama
+    ports:
+      - 11434:11434
+    networks:
+      - llm
+    volumes:
+      - ./ollama-local:/root/.ollama
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+  litellm:
+    image: ghcr.io/berriai/litellm:main-latest
+    container_name: litellm
+    hostname: litellm
+    networks:
+      - llm
+    restart: unless-stopped
+    command:
+      - --config=/litellm_config.yaml
+      - --detailed_debug
+    ports:
+      - 4000:4000
+    environment:
+      LITELLM_MASTER_KEY: "test-1234"
+    volumes:
+      - ./litellm_config.yaml:/litellm_config.yaml
+networks:
+  llm:
+    external: true

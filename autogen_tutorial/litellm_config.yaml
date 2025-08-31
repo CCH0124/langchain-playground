@@ -1,0 +1,13 @@
+model_list:
+  - model_name: llama3
+    litellm_params:
+      model: ollama/llama3.2
+      api_base: "http://ollama:11434"
+  - model_name: gpt-oss:20b
+    litellm_params:
+      model: ollama/gpt-oss:20b
+      api_base: "http://ollama:11434"
+  - model_name: bge-m3:latest
+    litellm_params:
+      model: ollama/bge-m3:latest
+      api_base: "http://ollama:11434"

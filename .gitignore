@@ -211,3 +211,5 @@ __marimo__/
 
 chroma/
 docs/chroma/
+
+**/ollama-local
